@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <h1>投票展示</h1>
-		<div class="flex-bc">
-    	<div id="starChart" class="statChart_box statH WW70"></div>
-			<div class="statInfo_box statH WW30">
+		<div class="chartInfo_box">
+    	<div id="starChart" class="statChart_box statH"></div>
+			<div class="statInfo_box">
 				<h3 class="text-l">总量： {{voteTotal}}</h3>
 				<h4 class="text-l Mg0">已投票数：{{statTotal}}</h4>
 				<h4 class="text-l Mg0">投票总占比：{{((Number(statTotal) / Number(voteTotal) * 100)).toFixed(2) + '%'}}</h4>
@@ -41,12 +41,18 @@
 <style scoped>
 .container{max-width: 1200px;margin: auto;}
 .statH{height: 500px;}
-.statChart_box {margin: auto;}
-.statInfo_box {color:#333;padding-top: 50px;}
+.chartInfo_box{overflow: hidden;}
+.statChart_box {width:70%;margin: auto;float: left;}
+.statInfo_box {width:30%;color:#333;padding-top: 0px;float: left;}
 .statInfo_box .list{font-size: 14px;}
 .tip_box{width: 80%;margin: auto;}
 .tip_box dt{font-weight: 600;font-size: 15px;}
 .tip_box dd{font-size: 14px;}
+@media (max-width: 996px) {
+	.statChart_box {width:100%;float: none;}
+	.statInfo_box {width:100%;float: none;padding: 0 15px;}
+	.tip_box{width: 100%;padding: 15px;}
+}
 </style>
 
 <script>
@@ -155,6 +161,18 @@ export default {
 					min: 0,
 					scale: true,
 					show:true,
+					axisLabel: {
+						show:false,
+						// color: "#000",
+						// interval: 0,
+						// formatter: function(value) {
+						// 	if (value.length > 12) {
+						// 		return value.substring(0, 12) + "...";
+						// 	} else {
+						// 		return value;
+						// 	}
+						// }
+					},
 					splitLine:{
 			　　　　show:true
 					}
