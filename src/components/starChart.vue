@@ -23,13 +23,13 @@
 		<div class="tip_box">
 			<h4>方案说明：</h4>
 			<dl class="text-l">
-				<dt>解决方案1:</dt>
+				<dt>解决方案1:<small>(地址：0x1111111111111111111111111111111111111111)</small></dt>
 				<dd>主网不分叉，数据不回滚，保持现状。<br>影响范围：被盗账户剩余资金仍然会转移或抛售。</dd>
-				<dt>解决方案2:</dt>
+				<dt>解决方案2:<small>(地址：0x2222222222222222222222222222222222222222)</small></dt>
 				<dd>主网硬分叉(类似以太坊DAO分叉)，指定块高度进行硬分叉，分叉代码禁止除买票之外所有类型交易，间隔一定块高度后（一周），清零被盗账户，剩余391.43万个转移至基金会账户，同时恢复交易。<br>
 如果被盗账户在硬分叉之前转移资金，则需要在恢复交易前进行第二次硬分叉，按转移数量扣减被盗账户转移后的账户。<br>
 影响范围：被盗账户清零，基金会账户拿回剩余部分被盗资金。 在主网区块高度600000之后，盗账户剩余资金通过DEX、OTC、SWAP、TimeLock等任何类型交易卖出都会被回滚，用户购买的盗币会被清零。</dd>
-				<dt>解决方案3:</dt>
+				<dt>解决方案3:<small>(地址：0x3333333333333333333333333333333333333333)</small></dt>
 				<dd>主网不分叉，数据不回滚，保持现状。<br>影响范围：被盗账户剩余资金仍然会转移或抛售。</dd>
 			</dl>
 		</div>
@@ -47,7 +47,9 @@
 .statInfo_box .list{font-size: 14px;}
 .tip_box{width: 80%;margin: auto;}
 .tip_box dt{font-weight: 600;font-size: 15px;}
+.tip_box dt small{font-weight: normal;margin-left:10px;color: #666;}
 .tip_box dd{font-size: 14px;}
+
 @media (max-width: 996px) {
 	.statChart_box {width:100%;float: none;}
 	.statInfo_box {width:100%;float: none;padding: 0 15px;}
